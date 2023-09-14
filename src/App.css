@@ -1,5 +1,7 @@
 .App {
-  text-align: center;
+  /* background-image: url('https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); */
+  background-size: cover;
+  min-height: 100vh;
 }
 
 .App-logo {
@@ -14,7 +16,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  /* background-color: #282c34; */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -35,4 +37,17 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.app-layer{
+
+  /* background-color: #15171bc1; */
+  min-height: 100vh;
+}
+
+
+.crsl.img{
+  padding: 20px;
+  width: 50%;
+  background-color: red;
 }

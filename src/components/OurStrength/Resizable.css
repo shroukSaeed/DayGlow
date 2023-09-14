@@ -1,0 +1,17 @@
+.strength-img{
+    width: 100%;
+    /* height: 300px; */
+}
+
+.img-holder{
+    padding: 9px;
+    width: 100%;
+    height: 300px;
+    margin-bottom: 5%;
+}
+
+.slider-col:hover {
+        transform: translateY(30px) scale(1.2 , 1.1 ) ;
+        transition: all .3s ease-in;
+        background-color: white;
+}

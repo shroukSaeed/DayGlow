@@ -1,0 +1,11 @@
+input,
+select {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    width: 250px;
+}
+
+form {
+    padding-top: 4%;
+}
