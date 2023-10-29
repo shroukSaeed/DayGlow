@@ -1,32 +1,46 @@
 /* url('https://wordpress.vecurosoft.com/grillino/wp-content/uploads/2020/10/breadcumb-bg-1-1.jpg') */
 
-.head-section{
-    background-image:url('https://wordpress.vecurosoft.com/grillino/wp-content/uploads/2020/10/breadcumb-bg-1-1.jpg');
+.head-section {
+    background-image: url('https://wordpress.vecurosoft.com/grillino/wp-content/uploads/2020/10/breadcumb-bg-1-1.jpg');
     height: 45vh;
-    background-position: center; 
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    
+
 }
 
-.over-img{
+.over-img {
     height: 45vh;
     position: relative;
     background-color: rgba(0, 0, 0, 0.58);
 }
 
-.breadcrumb{
-    background-color: #ffffff !important;
-    box-shadow: 0px 5px 25px 10px #b3afaf;
+/* {text-center  w-25 d-block py-3 rounded-pill mx-auto} */
+
+.bread-crumb {
+    background-color: #efebeb !important;
+    box-shadow: 0px 20px 30px 5px #c2c1c1;
+    border-radius: 50px;
+    width: 28%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: 1%;
     position: absolute;
     top: 90%;
     left: 38%;
+
+
 }
 
-.contact-form{
+.contact-form {
     position: relative;
+    /* margin: 150px 40px; */
 }
-.contact-form::after{
+
+
+.contact-form::after {
     content: ' ';
     display: flex;
     width: 2px;
@@ -38,6 +52,23 @@
     margin-top: 10px;
 }
 
-.contacts{
+.contacts {
     background-color: #292e31;
 }
+@media screen and (max-width:780px) {
+    .bread-crumb {
+        width: 60%;
+        position: absolute;
+        top: 90%;
+        left:18%;
+    }
+}
+@media screen and (max-width:480px) {
+    .bread-crumb {
+        width: 90%;
+        position: absolute;
+        top: 90%;
+        left:3%;
+    }
+}
+

@@ -1,0 +1,17 @@
+.cstm-btn{
+    color: aliceblue !important;
+}
+
+@media screen and (max-width:800px) {
+    .nav-half i , 
+    .nav-half h4,
+    .cart-icon i{
+        font-size: 19px !important;
+    }
+
+    .outer-nav{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+}

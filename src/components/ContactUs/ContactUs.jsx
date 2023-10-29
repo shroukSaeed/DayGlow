@@ -53,8 +53,9 @@ let navigator = useNavigate();
             <div className="head-section   text-center ">
                 <div className="  p-5 over-img">
                     <h1 className='text-light'>Contact Us</h1>
-                    <div className="breadcrumb text-center  w-25 d-block py-3 rounded-pill mx-auto ">
-                        <p className='fs-4'><Link to='/' className='text-decoration-none text-secondary '>Home</Link> - Contact Us</p>
+                    <div className="bread-crumb  ">
+                        {/* text-center  w-25 d-block py-3 rounded-pill mx-auto */}
+                        <p className='fs-4 mt-2'><Link to='/' className='text-decoration-none text-secondary  '>Home</Link> - Contact Us</p>
                     </div>
                 </div>
             </div>
@@ -92,7 +93,7 @@ let navigator = useNavigate();
                             />
                         </FloatingLabel>
 
-                        <Button onClick={clickHandler} variant="orange text-light m-5 rounded-pill  px-4   d-block mx-auto " className='hover-effect' type="button">
+                        <Button  onClick={clickHandler} variant=" text-light m-5 rounded-pill  px-4   d-block mx-auto " className='hover-effect btn-warning' type="button">
                             Submit
                         </Button>
                     </Col>
@@ -104,11 +105,11 @@ let navigator = useNavigate();
                         </div>
                         <div className='text-light px-5 my-3'>
                             <h5 className='text-secondary'>Phone number</h5>
-                            <h3><i class="bi bi-telephone-fill text-orange mx-2"></i> 01208569941</h3>
+                            <h3><i class="bi bi-telephone-fill text-orange mx-2"></i>+869 526 212</h3>
                         </div>
                         <div className='text-light px-5 my-3 '>
                             <h5 className='text-secondary'>Email</h5>
-                            <h3><i class="bi bi-envelope-fill text-orange mx-2"></i> contact@sjs.com</h3>
+                            <h3><i class="bi bi-envelope-fill text-orange mx-2"></i> contact@dayglow.com</h3>
                         </div>
                     </Col>
                 </Row>

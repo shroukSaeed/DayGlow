@@ -1,24 +1,66 @@
-import React, { useState, useEffect } from 'react'
-import { Alert } from 'react-bootstrap';
-import { useDispatch, useSelector } from 'react-redux';
-import { Link, useNavigate } from 'react-router-dom';
-import { login } from '../../ReduxTk/slices/authSlice';
-import { getCartData } from '../../ReduxTk/slices/cartSlice';
-import { Formik, useFormik } from "formik";
+import React, { useEffect, useState } from "react";
+import { Formik } from "formik";
 import * as Yup from "yup";
 import { Button, Col, Form, Row } from "react-bootstrap";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
-export default function LoginForm() {
-    const navigator = useNavigate();
-    const dispatch = useDispatch();
-    const [user, setUser] = useState([])
 
-    useEffect(() => {
-        fetch('http://localhost:3005/users')
-            .then(res => res.json())
-            .then(data => setUser(data))
-            .then(console.log)
-    }, [])
+
+// {flag ?
+//     (
+//         <>
+//             {isError ?
+//                 (
+//                     <Alert className='w-50  text-center d-block mx-auto' variant='danger'>
+//                         Failed
+//                     </Alert>
+//                 ) :
+//                 (
+//                     <Alert className='w-50 text-center d-block mx-auto ' variant='success'>
+//                         Successful
+//                     </Alert>
+//                 )
+//             }
+//         </>
+//     )
+//     : (
+//         <>
+
+//         </>
+//     )
+// }
+
+
+const submitHandler = (e) => {
+    e.preventDefault()
+    // console.log({ ...user, isAdmin: isAdmin });
+    const obj = user.find((u) => form.email == u.email && form.password == u.password)
+    if (obj) {
+        // setIsError(false)
+        // setFlag(true)
+        // console.log(obj.email + 's')
+        setTimeout(() => {
+            // setFlag(false)
+            dispatch(login(obj.id))
+            dispatch(getCartData(obj.id));
+            navigator('/')
+        }, 1000);
+    } else {
+        // console.log(obj + 'err')
+
+        // setIsError(true)
+        // setFlag(true)
+        setTimeout(() => {
+            setFlag(false)
+
+            // navigator('/')
+        }, 1000);
+    }
+
+}
+
+const LoginForm = () => {
 
     const validationSchema = Yup.object().shape({
         email: Yup.string()
@@ -28,43 +70,41 @@ export default function LoginForm() {
             .required("Passwort is required")
             .min(6, "Password too short! Must be at least 6 characters.")
             .max(10, "Password too long! Must be at most 10 characters."),
+        // acceptTOS: Yup.bool().oneOf(
+        //     [true],
+        //     "You must accept our Terms and Conditions!"
+        // ),
     });
 
+    const navigator = useNavigate();
+    const dispatch = useDispatch();
+
     const handleSubmit = (
+        //, acceptTOS 
         { email, password },
         { setFieldError }
     ) => {
         console.log("Success! Call the API Now!");
-        console.log(email, password)
-        const obj = user.find((u) => email == u.email && password == u.password)
-        if (obj) {
-            // console.log(obj.email + 's')
-            dispatch(login(obj.id))
+        setTimeout(() => {
+            setFieldError("email", "This email is already taken");
+        }, 1000);
+    };
 
-            dispatch(getCartData(obj.id));
-
-            setTimeout(() => {
-                navigator('/')
-
-            }, 1000);
-        } else {
-            setTimeout(() => {
-                setFieldError("password", "This password or email is wrong");
-            }, 1000);
-        }
-    }
-
-
+    // useEffect(() => {
+    //     fetch('http://localhost:3005/users')
+    //         .then(res => res.json())
+    //         .then(data => setUser(data))
+    // }, [])
 
     return (
-
         <div className='container bg-dark w-75 text-light my-4'>
-            <h1 className='text-center text-orange p-5 '>Login Form</h1>
+            <h1 className='text-center text-warning p-5 '>Login Form</h1>
 
             <Formik
                 initialValues={{
                     email: "",
                     password: "",
+                    // acceptTOS: false,
                 }}
                 onSubmit={(values, errors) => {
                     handleSubmit(values, errors);
@@ -109,6 +149,18 @@ export default function LoginForm() {
                                         />
                                         <div>{touched.password && errors.password}</div>
                                     </Form.Group>
+                                    <div>
+                                        {/* <input
+                                    type="checkbox"
+                                    checked={values.acceptTOS}
+                                    onChange={handleChange("acceptTOS")}
+                                    onBlur={handleBlur("acceptTOS")}
+                                />{" "}
+                                I accept TOS
+                                <div>
+                                    {touched.acceptTOS && errors.acceptTOS}
+                                </div> */}
+                                    </div>
 
                                     <div className='my-4'>
                                         <h5>Dont have any accounts ? <Link to={'/register'} className='text-orange'>Create a new Account </Link></h5>
@@ -122,5 +174,7 @@ export default function LoginForm() {
                 }}
             </Formik>
         </div>
-    )
-}
+    );
+};
+
+export default LoginForm;

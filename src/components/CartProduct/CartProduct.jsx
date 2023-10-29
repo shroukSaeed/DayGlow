@@ -1,4 +1,3 @@
-import { PropTypes } from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { decreaseQuantity, increaseQuantity, removeItem } from '../../ReduxTk/slices/cartSlice';
 

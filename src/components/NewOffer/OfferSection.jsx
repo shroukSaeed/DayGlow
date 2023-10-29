@@ -10,8 +10,8 @@ export default function OfferSection() {
                     <h6>Only this month business lunch from $30.90</h6>
                 </Col>
 
-                <Col lg={3} sm={12} className=' my-4'>
-                    <button className='btn btn-warning px-4  rounded-pill fs-4 fw-bold text-light'>GET OFFER</button>
+                <Col lg={3} sm={12} className=' my-4 d-flex justify-content-center'>
+                    <button className='btn btn-warning px-4  rounded-pill fs-4 fw-bold text-light '>GET OFFER</button>
                 </Col>
             </Row>
         </div>

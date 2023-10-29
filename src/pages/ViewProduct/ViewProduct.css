@@ -1,0 +1,14 @@
+.header{
+    position: relative;
+}
+
+.header::after{
+    content: ' ';
+    width: 80px;
+    /* margin:; */
+    height: 3px;
+    position: absolute;
+    background-color: #fa8507;
+
+
+}

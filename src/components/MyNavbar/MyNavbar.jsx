@@ -1,9 +1,11 @@
 import React from 'react'
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import './MyNavbar.css'
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, NavLink } from 'react-router-dom';
 import { logout } from '../../ReduxTk/slices/authSlice';
+import { Container } from 'react-bootstrap';
 
 export default function MyNavbar() {
     const isAuth = useSelector(state => state.authReducer.isAuth);
@@ -17,56 +19,59 @@ export default function MyNavbar() {
     return (
         <>
 
-            <Navbar sticky="top" expand="xl" bg='dark' data-bs-theme="dark" className="text-light bg-gradient bg-opacity-75 px-5 " >
+            <Navbar sticky="top" expand="md" bg='dark' data-bs-theme="dark" className="text-light bg-gradient px-2 " >
                 <Navbar.Brand href="#home" className='text-orange fw-bolder fs-4 hover-effect'><i className="bi bi-fire mx-1"></i>DayGlow</Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="basic-navbar-nav">
 
                     {isAuth ?
-                        <Nav className="me-auto d-flex justify-content-between  w-100 ">
+                        <>
+                            <Nav className="me-auto my-2   d-flex    w-100 " navbarScroll>
 
-                            <div className=' d-flex pt-2 justify-content-between  '>
-                                <NavLink className=' text-light nav-link' to='/' >
-                                    Home
-                                </NavLink>
-                                <NavLink className=' text-light nav-link' to='/menue' >
-                                    Menue
-                                </NavLink>
+                                <div className=' d-flex pt-2    justify-content-between'>
+                                    <NavLink className=' text-light nav-link me-3' to='/' >
+                                        Home
+                                    </NavLink>
+                                    <NavLink className=' text-light nav-link mx-3' to='/menue' >
+                                        Menue
+                                    </NavLink>
 
-                                <NavLink className='text-light nav-link' to='/contact' >Contact Us</NavLink>
-                                <NavLink className=' text-light nav-link' to='/' >
+                                    <NavLink className='text-light nav-link ms-3' to='/contact' >ContactUs</NavLink>
+                                    {/* <NavLink className=' text-light nav-link' to='/' > */}
                                     {/* <div class="dropdown">
-                                            <button className="dropbtn">Pages<i className="bi bi-chevron-down mx-2"  ></i></button>
-                                            <div className="dropdown-content">
-                                                <Link to={'/'}>Link 1</Link>
-                                                <Link to={'/'}>Link 2</Link>
-                                                <Link to={'/'}>Link 3</Link>
-                                            </div>
-                                        </div> */}
-                                </NavLink>
-                                
+                <button className="dropbtn">Pages<i className="bi bi-chevron-down mx-2"  ></i></button>
+                <div className="dropdown-content">
+                    <Link to={'/'}>Link 1</Link>
+                    <Link to={'/'}>Link 2</Link>
+                    <Link to={'/'}>Link 3</Link>
+                </div>
+            </div> */}
+                                    {/* </NavLink> */}
+
+
+
+
+                                </div>
+
+
+                            </Nav>
+
+                            <div className="container d-flex justify-content-end  ">
+                                <div className='d-flex  nav-half pt-1  px-3  '>
+                                    <Link className='text-decoration-none d-flex' to={'/'}> <i className="bi bi-clock text-orange hover-effect  fs-3"></i>
+                                        <p className=' text-light pt-2 ms-1 '>Call For Order</p></Link>
+                                </div>
+
+                                <div className='pt-1   px-3  '>
+                                    <Link className=' cart-icon text-decoration-none text-light d-flex' to={'/cart'}><i className="fs-3 fw-bolder bi bi-cart3 text-orange hover-effect"></i><p className='ms-1 pt-2'>Cart</p></Link>
+
+                                </div>
+                                <div className='d-flex  justify-content-end  px-3 '>
+                                    <button className='cstm-btn btn btn-warning ' onClick={handleLogout}>log Out</button>
+
+                                </div>
                             </div>
-
-                            <div className='d-flex  justify-content-between  mt-0 '>
-                                <div className='d-flex me-5'>
-                                    <i className="bi bi-clock text-orange hover-effect m-1 fs-2"></i>
-                                    <h4 className='my-0  '>Call For Order:<br /><strong><Link to={'/'} className='text-light text-decoration-none'>+869 526 212</Link></strong></h4>
-                                </div>
-
-                                {/* <div className=' rounded-circle pt-3 ms-5'>
-                                <Link> <i className="fs-3 fw-bolder bi bi-search text-orange hover-effect"></i></Link>
-
-                                </div >*/}
-                                <div className=' rounded-circle pt-2  mx-5'>
-                                    <Link to={'/cart'}><i className="fs-3 fw-bolder bi bi-cart3 text-orange hover-effect"></i></Link>
-                                </div>
-                                <div className='d-flex justify-content-center align-items-ceter m-2'>
-                                    <button className='btn btn-warning text-light' onClick={handleLogout}>log Out</button>
-
-                                </div>
-
-                            </div>
-                        </Nav>
+                        </>
                         :
 
                         <Nav className="me-auto ">

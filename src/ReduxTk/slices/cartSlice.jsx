@@ -31,8 +31,10 @@ const cartSlice = createSlice({
             const obj = state.cart.find(item => item.id === action.payload.id);
             if (obj) {
                 obj.quantity++;
+                console.log('full')
                 // obj.price = obj.quantity * obj.price
             } else {
+                console.log('empty')
                 state.cart.push({ ...action.payload, quantity: 1 });
             }
         },

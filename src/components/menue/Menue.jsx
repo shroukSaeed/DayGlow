@@ -15,7 +15,7 @@ export default function Menue() {
   return (
     <div>
       {/* <MenuePagination/> */}
-      <Container>
+      <Container className=''>
         <ProductList title='Latest Products' products={products.slice(0,4)}/>
         <ProductList title='New Offers' products={products.slice(4,8)}/>
       </Container>

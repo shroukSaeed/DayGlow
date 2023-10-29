@@ -15,8 +15,8 @@ export default function MyCarousel() {
                         </div>
                     </div>
                     <Carousel.Caption className=' position-absloute top-50  start-50 translate-middle  py-5'>
-                        <h5>Stay Healthy Stay Strong</h5>
-                        <h1>Diet Healthy Fruites in Every Morning</h1>
+                        <h5 className=''>Stay Healthy Stay Strong</h5>
+                        <h1 className='p-4'>Diet Healthy Fruites in Every Morning</h1>
                         <Link to={'/menue'} className=' btn-warning rounded text-light px-3 py-2 text-decoration-none fw-bolder'>Order Now</Link>
                     </Carousel.Caption>
                 </Carousel.Item>
@@ -26,8 +26,8 @@ export default function MyCarousel() {
                         </div>
                     </div>
                     <Carousel.Caption className=' position-absloute top-50  start-50 translate-middle py-5'>
-                        <h5>Stay Healthy Stay Strong</h5>
-                        <h1>Diet Healthy Fruites in Every Morning</h1>
+                        <h5 className=''>Stay Healthy Stay Strong</h5>
+                        <h1 className='p-4'>Diet Healthy Fruites in Every Morning</h1>
                         <Link to={'/menue'} className=' btn-warning rounded text-light px-3 py-2 text-decoration-none fw-bolder'>Order Now</Link>
                     </Carousel.Caption>
                 </Carousel.Item>
@@ -37,9 +37,9 @@ export default function MyCarousel() {
                         </div>
                     </div>
                     <Carousel.Caption className=' position-absloute top-50  start-50 translate-middle py-5'>
-                        <h5>Stay Healthy Stay Strong</h5>
-                        <h1>Diet Healthy Fruites in Every Morning</h1>
-                        <Link to={'/menue'} className=' btn-warning rounded text-light px-3 py-2 text-decoration-none fw-bolder'>Order Now</Link>
+                        <h5 className=''>Stay Healthy Stay Strong</h5>
+                        <h1 className='p-4'>Diet Healthy Fruites in Every Morning</h1>
+                        <Link to={'/menue'} className=' btn-warning rounded text-light px-3 py-2  text-decoration-none fw-bolder'>Order Now</Link>
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>

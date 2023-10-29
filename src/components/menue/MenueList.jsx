@@ -19,9 +19,10 @@ export default function MenueList(props) {
                         })
                         :
                         <div className='p-5 text-center'>
-                        <h1 className='text-danger' >No Products Available {':('} </h1>
+                            <h1 className='text-secondary' ><i className="bi bi-emoji-smile-upside-down mx-2"></i>
+                                Oops no products found ... </h1>
                         </div>
-                    
+
                 }
 
             </Row>
